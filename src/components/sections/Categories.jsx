@@ -1,0 +1,2 @@
+import { categories } from '../../data/products';
+export default function Categories({selected,onSelect}){return <section className="categories"><div className="container"><div className="section-heading section-heading--row"><div><span className="eyebrow">DESCUBRE</span><h2>Compra por categoría</h2></div><p>Encuentra rápidamente lo que buscas.</p></div><div className="category-list">{categories.map(category=><button key={category} className={selected===category?'category active':'category'} onClick={()=>onSelect(category)}>{category}</button>)}</div></div></section>}

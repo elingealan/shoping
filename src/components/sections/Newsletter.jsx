@@ -1,2 +1,24 @@
-import { ArrowRight } from 'lucide-react';
-export default function Newsletter(){return <section className="newsletter section" id="contacto"><div className="container newsletter__box"><div><span className="eyebrow">MANTENTE AL DÍA</span><h2>Novedades sin llenar tu bandeja.</h2><p>Recibe lanzamientos, promociones y recomendaciones de Nova.</p></div><form onSubmit={(e)=>e.preventDefault()}><input type="email" placeholder="tu@email.com" aria-label="Correo electrónico"/><button className="button button--dark">Suscribirme <ArrowRight size={17}/></button></form></div></section>}
+import { ArrowRight } from "lucide-react";
+export default function Newsletter() {
+  return (
+    <section className="newsletter section" id="contacto">
+      <div className="container newsletter__box">
+        <div>
+          <span className="eyebrow">MANTENTE AL DÍA</span>
+          <h2>Novedades sin llenar tu bandeja.</h2>
+          <p>Recibe lanzamientos, promociones y recomendaciones de Nova.</p>
+        </div>
+        <form onSubmit={(e) => e.preventDefault()}>
+          <input
+            type="email"
+            placeholder="tu@email.com"
+            aria-label="Correo electrónico"
+          />
+          <button className="button button--dark">
+            Suscribirme <ArrowRight size={17} />
+          </button>
+        </form>
+      </div>
+    </section>
+  );
+}

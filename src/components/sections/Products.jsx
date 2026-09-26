@@ -1,2 +1,49 @@
-import { Heart, ArrowUpRight } from 'lucide-react';
-export default function Products({products,onAdd}){return <section className="products section" id="productos"><div className="container"><div className="section-heading section-heading--row"><div><span className="eyebrow">NUESTRA TIENDA</span><h2>Favoritos de la comunidad</h2></div><span className="result-count">{products.length} productos</span></div>{products.length ? <div className="product-grid">{products.map(p=><article className="product-card" key={p.id}><div className="product-image">{p.tag && <span className="product-tag">{p.tag}</span>}<button className="favorite" aria-label={`Guardar ${p.name}`}><Heart size={18}/></button><img src={p.image} alt={p.name}/><button className="quick-add" onClick={()=>onAdd(p)}>Agregar al carrito <ArrowUpRight size={16}/></button></div><div className="product-info"><span>{p.category}</span><h3>{p.name}</h3><div><strong>${p.price.toLocaleString('es-MX')}</strong>{p.oldPrice&&<del>${p.oldPrice.toLocaleString('es-MX')}</del>}</div></div></article>)}</div> : <div className="no-results"><h3>No encontramos productos</h3><p>Prueba con otra búsqueda o categoría.</p></div>}</div></section>}
+import { Heart, ArrowUpRight } from "lucide-react";
+export default function Products({ products, onAdd }) {
+  return (
+    <section className="products section" id="productos">
+      <div className="container">
+        <div className="section-heading section-heading--row">
+          <div>
+            <span className="eyebrow">NUESTRA TIENDA</span>
+            <h2>Favoritos de la comunidad</h2>
+          </div>
+          <span className="result-count">{products.length} productos</span>
+        </div>
+        {products.length ? (
+          <div className="product-grid">
+            {products.map((p) => (
+              <article className="product-card" key={p.id}>
+                <div className="product-image">
+                  {p.tag && <span className="product-tag">{p.tag}</span>}
+                  <button className="favorite" aria-label={`Guardar ${p.name}`}>
+                    <Heart size={18} />
+                  </button>
+                  <img src={p.image} alt={p.name} />
+                  <button className="quick-add" onClick={() => onAdd(p)}>
+                    Agregar al carrito <ArrowUpRight size={16} />
+                  </button>
+                </div>
+                <div className="product-info">
+                  <span>{p.category}</span>
+                  <h3>{p.name}</h3>
+                  <div>
+                    <strong>${p.price.toLocaleString("es-MX")}</strong>
+                    {p.oldPrice && (
+                      <del>${p.oldPrice.toLocaleString("es-MX")}</del>
+                    )}
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        ) : (
+          <div className="no-results">
+            <h3>No encontramos productos</h3>
+            <p>Prueba con otra búsqueda o categoría.</p>
+          </div>
+        )}
+      </div>
+    </section>
+  );
+}
